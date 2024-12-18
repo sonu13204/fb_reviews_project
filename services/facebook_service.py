@@ -6,7 +6,7 @@ def fetch_pages():
     url = f"{BASE_FB_URL}/me/accounts"
     params = {"access_token": USER_API_TOKEN}
     response = requests.get(url, params=params)
-    return response
+    return response.json()
 
 def fetch_reviews(page_id: str, access_token: str):
     """Fetch reviews from a specific Facebook page."""
